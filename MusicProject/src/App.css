@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* gradiente animado */
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.overlay {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  max-width: 600px;
+
+  /* efeito vidro moderno */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+
+  /* brilho leve */
+  background: linear-gradient(90deg, #ffffff, #ffb6c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(255,182,193,0.6);
+  }
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* player mais bonito */
+.player {
+  width: 280px;
+  max-width: 90%;
+  border-radius: 30px;
+  padding: 5px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.player:hover {
+  transform: scale(1.05);
+}
+
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  40% { transform: scale(0.95); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
