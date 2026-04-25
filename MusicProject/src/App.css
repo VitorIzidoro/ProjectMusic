@@ -109,13 +109,21 @@ p {
 }
 
 /* PLAYER */
+/* PLAYER */
 .player {
-  width: 20vw;
-  max-width: 100%;
+  width: 320px;          /* tamanho base */
+  max-width: 90%;        /* adapta em telas menores */
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 5px;
   background: rgba(255,255,255,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .player {
+    width: 65%;         /* ocupa a tela no celular */
+  }
 }
 
 /* ASSINATURA */
