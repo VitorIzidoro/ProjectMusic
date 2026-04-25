@@ -112,7 +112,7 @@ p {
 /* PLAYER */
 .player {
   width: 320px;          /* tamanho base */
-  max-width: 90%;        /* adapta em telas menores */
+  max-width: 100%;        /* adapta em telas menores */
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 5px;

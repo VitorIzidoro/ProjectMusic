@@ -27,7 +27,7 @@ em tudo que eu sinto, mas nem sempre consigo dizer.
             <source src="/musica.mp3" type="audio/mpeg" />
           </audio>
 
-          <span className="assinatura">com amor ❤️</span>
+          <span className="assinatura">Com Amor ❤️</span>
         </div>
       )}
     </div>
