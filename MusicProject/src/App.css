@@ -8,42 +8,128 @@
 .hero {
   height: 100vh;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  background: linear-gradient(135deg, #1a0f1f, #2c1a2e, #3a1f2b);
+}
+
+/* PARTÍCULAS SUAVES */
+.particles::before,
+.particles::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(255,182,193,0.2) 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: moveParticles 25s linear infinite;
+}
+
+.particles::after {
+  animation-direction: reverse;
+  opacity: 0.5;
+}
+
+@keyframes moveParticles {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, -200px);
+  }
+}
+
+/* INTRO */
+.intro {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  color: white;
+  text-align: center;
 
-  /* gradiente animado */
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  animation: fadeIn 2s ease;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.intro h1 {
+  font-size: 38px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
 }
 
-.overlay {
+.intro button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+  transform: scale(1); /* 👈 ADICIONA ISSO */
+}
+
+.intro button:hover {
+  transform: scale(1.05); /* 1.1 é meio agressivo */
+  background: #f96883;
+}
+
+/* CONTEÚDO */
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
   padding: 20px;
-  max-width: 600px;
 
-  /* efeito vidro moderno */
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 40px rgba(0,0,0,0.4);
-
-  animation: fadeIn 1.5s ease;
+  animation: fadeIn 2s ease;
 }
 
+h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+
+  background: linear-gradient(90deg, #fff, #ff9eb5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  max-width: 500px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* PLAYER */
+.player {
+  width: 20vw;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 5px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ASSINATURA */
+.assinatura {
+  font-size: 20px;
+  opacity: 0.8;
+  animation: pulse 1.5s infinite;
+}
+
+/* ANIMAÇÕES */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -51,56 +137,8 @@
   }
 }
 
-h1 {
-  font-size: 40px;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
-
-  /* brilho leve */
-  background: linear-gradient(90deg, #ffffff, #ffb6c1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px rgba(255,255,255,0.2);
-  }
-  to {
-    text-shadow: 0 0 25px rgba(255,182,193,0.6);
-  }
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  opacity: 0.85;
-  line-height: 1.5;
-}
-
-/* player mais bonito */
-.player {
-  width: 280px;
-  max-width: 90%;
-  border-radius: 30px;
-  padding: 5px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-
-  transition: 0.3s;
-}
-
-.player:hover {
-  transform: scale(1.05);
-}
-
-
-@keyframes heartbeat {
+@keyframes pulse {
   0% { transform: scale(1); }
-  25% { transform: scale(1.2); }
-  40% { transform: scale(0.95); }
-  60% { transform: scale(1.15); }
+  50% { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
